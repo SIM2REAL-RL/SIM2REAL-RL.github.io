@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sim2Real-RL: visual reinforcement learning in randomized simulation for zero-shot embodied manipulation. Anonymous research project page.">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#f8fafc">
+  <title>Sim2Real-RL | Anonymous project page</title>
+  <link rel="icon" href="assets/figures/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/content.js" defer></script>
+  <script src="assets/js/media-index.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="wordmark" href="#top" aria-label="Sim2Real-RL home"><span class="brand-mark" aria-hidden="true">S<span>R</span></span>Sim2Real<span class="brand-suffix">-RL</span></a>
+      <button class="menu-toggle icon-button" aria-controls="site-nav" aria-expanded="false" aria-label="Open navigation"><span></span><span></span></button>
+      <nav id="site-nav" aria-label="Main navigation">
+        <a href="#overview">Overview</a><a href="#tasks">Tasks</a><a href="#comparison">Comparisons</a><a href="#method">Method</a><a href="#results">Results</a>
+      </nav>
+      <span class="nav-label">Anonymous project page</span>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="eyebrow venue"><span class="status-dot" aria-hidden="true"></span><span id="venue-text">ICLR 2027 · Anonymous submission</span></div>
+        <h1 id="paper-title">Sim2Real<span>-RL</span></h1>
+        <p class="paper-subtitle" id="paper-subtitle">Efficient Visual Reinforcement Learning<br class="desktop-break"> for Zero-Shot Embodied Manipulation</p>
+        <p class="author-line" id="authors">Anonymous Authors</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#tasks"><span>Explore the tasks</span><span aria-hidden="true">↗</span></a>
+          <a class="button secondary" id="paper-link" href="#" aria-disabled="true" title="Add the final anonymous manuscript to enable this link."><span class="small-icon" data-icon="paper" aria-hidden="true"></span>Paper<span class="link-status">not linked</span></a>
+          <a class="button secondary" id="code-link" href="#" aria-disabled="true" title="Add an anonymous code URL to enable this link."><span class="small-icon" data-icon="code" aria-hidden="true"></span>Code<span class="link-status">not linked</span></a>
+        </div>
+        <p class="hero-tldr">Learn from randomized simulation.<br class="mobile-break"> Deploy directly with <strong>RGB + proprioception.</strong></p>
+
+        <div class="showcase" id="hero-showcase">
+          <div class="showcase-topbar"><span><span class="tiny-square" aria-hidden="true"></span> FROM SIMULATION TO REALITY</span><span id="featured-label">PushT · task-specific policy</span></div>
+          <div id="hero-media" class="hero-media"></div>
+          <div class="showcase-bottom"><span>Simulation-trained policy <span class="flow-arrow" aria-hidden="true">⟶</span> Zero-shot real-world deployment</span><a href="#comparison">Compare the methods <span aria-hidden="true">↗</span></a></div>
+        </div>
+        <div class="key-facts" aria-label="Framework at a glance">
+          <div><strong>07</strong><span>Manipulation tasks</span></div>
+          <div><strong>RGB<span class="fact-plus">+</span></strong><span>Proprioception at deployment</span></div>
+          <div><strong>Zero-shot</strong><span>No real-world policy fine-tuning</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section overview-section" id="overview">
+      <div class="container overview-grid">
+        <div><p class="eyebrow">01 / THE IDEA</p><h2>Learn what matters.<br><span class="muted-heading">Transfer what works.</span></h2></div>
+        <div class="overview-copy">
+          <p>Sim2Real-RL trains visual manipulation policies end-to-end in randomized simulation and deploys them directly on a real robot without policy fine-tuning. An asymmetric actor–critic uses privileged task states for value estimation, while the actor learns from RGB observations and proprioception.</p>
+          <p><strong>Coarse-to-Fine Attention (CFA)</strong> first localizes interaction-relevant regions and then refines spatial attention within them. <strong>Advantage-aware Privileged Contrastive Learning (APC)</strong> uses privileged states and transition-wise advantages to guide visual representation learning during training.</p>
+          <div class="overview-note"><span class="small-icon" data-icon="layers" aria-hidden="true"></span><span>One learning framework, with a separately trained policy for each task.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tasks-section" id="tasks">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow">02 / TASK GALLERY</p><h2>Seven tasks. <span class="muted-heading">See them in action.</span></h2><p class="section-intro">From free-object manipulation to articulated interaction.</p></div>
+          <div class="segmented" id="gallery-domain" role="group" aria-label="Gallery video domain"><button class="is-active" data-domain="real" aria-pressed="true">Real world</button><button data-domain="sim" aria-pressed="false">Simulation</button></div>
+        </div>
+        <div class="task-grid" id="task-grid"></div>
+        <p class="section-footnote">Select a task to inspect its simulation and real-world recordings. Missing recordings are explicitly marked.</p>
+      </div>
+    </section>
+
+    <section class="section comparison-section" id="comparison">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow">03 / SIDE-BY-SIDE COMPARISON</p><h2>Same task. <span class="muted-heading">Different methods.</span></h2><p class="section-intro">Compare Sim2Real-RL with Squint, LeRobot/PPO, BC, and DAgger.</p></div>
+          <span class="outlined-label"><span class="small-icon" data-icon="columns" aria-hidden="true"></span> Qualitative comparison</span>
+        </div>
+        <div class="comparison-shell">
+          <aside class="task-sidebar" aria-label="Select comparison task"><p class="sidebar-label">SELECT A TASK</p><div id="comparison-tasks" role="group" aria-label="Comparison tasks"></div></aside>
+          <div class="comparison-main">
+            <div class="comparison-heading"><div><span class="eyebrow compact" id="comparison-category"></span><h3 id="comparison-task-name">Pick Cube</h3></div><span class="task-count" id="comparison-task-count">01 / 07</span></div>
+            <div class="comparison-toolbar">
+              <label>Baseline <select id="baseline-select"><option value="squint">Squint</option><option value="ppo">LeRobot/PPO</option><option value="bc">BC</option><option value="dagger">DAgger</option><option value="all">All methods</option></select></label>
+              <label>View <select id="comparison-domain"><option value="real">Real world</option><option value="sim">Simulation</option></select></label>
+              <div class="playback-controls"><label class="speed-label"><span class="sr-only">Playback speed</span><select id="playback-speed" aria-label="Playback speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label><button class="tool-button" id="play-all" type="button"><span class="small-icon" data-icon="play" aria-hidden="true"></span><span id="play-all-label">Play together</span></button><button class="icon-button restart-button" id="restart-all" type="button" title="Restart available videos from the beginning" aria-label="Restart videos"><span class="small-icon" data-icon="restart" aria-hidden="true"></span></button></div>
+            </div>
+            <div class="comparison-videos" id="comparison-videos"></div>
+            <p class="playback-note" id="playback-note" role="status" aria-live="polite">Playback controls align clip starts for viewing; they do not establish matched initial conditions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section method-section" id="method">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">04 / THE METHOD</p><h2>Focus the attention.<br class="mobile-break"> <span class="muted-heading">Guide the representation.</span></h2><p class="section-intro">Two complementary mechanisms within a single visual reinforcement-learning process.</p></div></div>
+        <div class="method-summary">
+          <div class="pipeline-step"><span class="pipeline-num">01</span><strong>Randomized simulation</strong><span>Camera, appearance, and physics</span></div><span class="pipeline-arrow" aria-hidden="true">→</span>
+          <div class="pipeline-step"><span class="pipeline-num">02</span><strong>Asymmetric actor–critic</strong><span>Joint PPO, CFA, and APC training</span></div><span class="pipeline-arrow" aria-hidden="true">→</span>
+          <div class="pipeline-step"><span class="pipeline-num">03</span><strong>Direct deployment</strong><span>RGB + proprioception → actions</span></div>
+        </div>
+        <article class="method-card">
+          <div class="method-copy"><span class="method-badge">CFA</span><h3>Coarse-to-Fine<br>Attention</h3><p>First localize interaction-relevant regions containing the end effector and task objects. Then refine spatial attention within those regions to extract control-relevant visual features.</p><span class="method-property">Where to look</span></div>
+          <figure class="paper-figure"><button class="figure-zoom" type="button" data-figure="assets/figures/cfa.png" data-caption="CFA and its component controls · manuscript Figure 2"><img src="assets/figures/cfa.png" width="1404" height="421" alt="Manuscript Figure 2: no attention, ROI only, spatial only, and the combined CFA computation paths." loading="lazy"><span>Expand figure <span aria-hidden="true">↗</span></span></button><figcaption>Figure 2 from the manuscript. Computation paths, not measured attention maps.</figcaption></figure>
+        </article>
+        <article class="method-card">
+          <div class="method-copy"><span class="method-badge secondary-badge">APC</span><h3>Advantage-aware Privileged Contrastive Learning</h3><p>Align visual features with privileged task-state representations during simulation training. Transition-wise advantages weight the contrastive objective, giving more emphasis to favorable transitions.</p><span class="method-property">What to learn</span></div>
+          <figure class="paper-figure"><button class="figure-zoom" type="button" data-figure="assets/figures/apc.png" data-caption="Advantage-aware Privileged Contrastive Learning · manuscript Figure 3"><img src="assets/figures/apc.png" width="1404" height="407" alt="Manuscript Figure 3: visual and privileged state projections with advantage-weighted symmetric contrastive learning; privileged inputs are training-only." loading="lazy"><span>Expand figure <span aria-hidden="true">↗</span></span></button><figcaption>Figure 3 from the manuscript. Privileged encoding and advantage weights are training-only.</figcaption></figure>
+        </article>
+        <div class="deployment-note"><span class="small-icon" data-icon="check" aria-hidden="true"></span><p><strong>At deployment:</strong> the actor uses RGB observations and proprioception. Simulator annotations, privileged states, and real-world policy fine-tuning are not required.</p></div>
+      </div>
+    </section>
+
+    <section class="section results-section" id="results">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">05 / QUANTITATIVE RESULTS</p><h2>Zero-shot <span class="muted-heading">real-world evaluation.</span></h2><p class="section-intro">Task-level success rates, with successful trials and total evaluation trials.</p></div><span class="outlined-label">Success rate ↑</span></div>
+        <div class="results-table-wrap" tabindex="0" role="region" aria-label="Scrollable real-world success-rate table"><table id="results-table"><caption class="sr-only">Zero-shot real-world success rates for the seven tasks and five methods.</caption><thead></thead><tbody></tbody><tfoot></tfoot></table></div>
+        <div class="results-notes"><p><strong>—</strong> Unreported result, not zero success. Values appear only after verified trial counts are entered.</p><p>Mean is the unweighted average across all seven tasks and is shown only when a method has results for every task.</p><p id="evaluation-note" hidden></p></div>
+        <div class="learning-curves" id="learning-curves" hidden><h3>Learning efficiency</h3><div class="curve-grid" id="curve-grid"></div></div>
+      </div>
+    </section>
+    <section class="closing-section"><div class="container closing-inner"><div><p class="eyebrow">SIMULATION → REALITY</p><h2>Visual control,<br><span class="accent-text">beyond the simulator.</span></h2></div><a class="button primary" href="#tasks">Back to the demonstrations <span aria-hidden="true">↗</span></a></div></section>
+  </main>
+  <footer class="site-footer"><div class="container"><span class="footer-brand">Sim2Real-RL</span><span>Anonymous research project page</span><span>No analytics or third-party embeds in this frontend.</span></div></footer>
+  <noscript><div class="noscript-note">Enable JavaScript to load the task gallery and comparison controls. The method overview remains readable without it.</div></noscript>
+
+  <dialog id="task-dialog" class="task-dialog" aria-labelledby="dialog-title"><div class="dialog-header"><div><p class="eyebrow compact" id="dialog-category"></p><h2 id="dialog-title">Task details</h2></div><button class="icon-button dialog-close" type="button" aria-label="Close task details">×</button></div><p id="dialog-description"></p><div id="dialog-videos" class="dialog-videos"></div><div class="dialog-footer"><span>Sim2Real-RL · separately trained task policy</span><button class="button primary small-button" id="dialog-compare" type="button">Compare this task <span aria-hidden="true">↗</span></button></div></dialog>
+  <dialog id="figure-dialog" class="figure-dialog" aria-labelledby="figure-title"><div class="dialog-header"><h2 id="figure-title">Method figure</h2><button class="icon-button dialog-close" type="button" aria-label="Close figure">×</button></div><img id="figure-dialog-image" alt="Expanded method figure"></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
